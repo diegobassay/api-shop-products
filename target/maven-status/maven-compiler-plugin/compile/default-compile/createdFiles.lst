@@ -1,1 +1,4 @@
+com/example/api_shop_products/model/Product.class
+com/example/api_shop_products/model/Client.class
 com/example/api_shop_products/DemoApplication.class
+com/example/api_shop_products/model/Purchase.class

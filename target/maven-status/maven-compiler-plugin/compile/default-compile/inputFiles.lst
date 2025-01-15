@@ -1,1 +1,4 @@
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/DemoApplication.java
+/home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/model/Client.java
+/home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/model/Product.java
+/home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/model/Purchase.java

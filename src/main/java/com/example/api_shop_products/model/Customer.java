@@ -75,6 +75,8 @@ public class Customer {
 
         String getCpf();
 
+        String getWineMostPurchased();
+
     }
 
 }

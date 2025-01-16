@@ -82,4 +82,18 @@ public class Product {
 		return "{ id : " + id + ", code : " + code + ", wineType : " + wineType + ", price : " + price + "}";
 	}
 
+    public static interface ProductResult{
+        long getId();
+
+        String getHarvest();
+
+        Integer getPurchasedYear();
+
+        String getCode();
+
+        String getWineType();
+    }
+
+
 }
+

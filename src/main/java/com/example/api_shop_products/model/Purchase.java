@@ -1,4 +1,5 @@
 package com.example.api_shop_products.model;
+import com.example.api_shop_products.model.Product;
 import jakarta.persistence.*;
 
 @Entity
@@ -18,7 +19,7 @@ public class Purchase {
 	@Column(name = "customer_id")
 	private Integer customerId;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "code", nullable = false)
     private Product product;
 
@@ -57,6 +58,15 @@ public class Purchase {
 
 	public void setCustomerId(Integer customerId) {
 		this.customerId = customerId;
+	}
+
+
+    public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 
 	@Override

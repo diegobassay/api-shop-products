@@ -16,4 +16,17 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
         "group by custumer.id, custumer.name " +
         "order by quantity_total_products desc", nativeQuery = true)
     public List<Customer.CustomerResult> findTopThreeCustomer();
+
+	@Query(value = "select top 1 customer.name, "+
+		"customer.cpf, product.wine_type as wine_most_purchased, "+
+		"count(product.wine_type) as quantity_total_products "+
+		"from CUSTOMER customer "+
+		"	inner join PURCHASE purchase on customer.id = purchase.customer_id "+
+		"	inner join PRODUCT product on product.code = purchase.code "+
+		"	where customer.id = ?1 "+
+		"group by  customer.name, product.wine_type "+
+		"order by count(product.wine_type) desc", nativeQuery = true)
+	public List<Customer.CustomerResult> findWineMostPurchasedByCustomer(Long customerId);
+
+	
 }

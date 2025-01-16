@@ -37,4 +37,5 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
         "group by  purchases_cache.id " +
         "order by  max(purchases_cache.total) desc", nativeQuery = true)
     public List<Purchase.PurchaseResult> findMaxPurchasesByYear(Long year);
+
 }

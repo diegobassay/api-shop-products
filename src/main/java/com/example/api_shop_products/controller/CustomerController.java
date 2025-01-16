@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.api_shop_products.model.Customer;
+import com.example.api_shop_products.model.Product;
+import com.example.api_shop_products.model.ProductRecommendationResult;
 import com.example.api_shop_products.service.CustomerService;
 import com.example.api_shop_products.exception.ResourceNotFoundException;
 import io.swagger.v3.oas.annotations.Hidden;
@@ -41,10 +43,9 @@ public class CustomerController {
         return listCustomer;
     }
 
-	@GetMapping("/recomendacao/cliente/tipo")
-    public List<Customer.CustomerResult> getWineRecommendation() {
-
-        return null;
+	@GetMapping("/recomendacao/{client_id}/type")
+    public  ProductRecommendationResult getWineRecommendation(@PathVariable(value = "client_id") Long customerId) {
+        return customerService.getRecommendationsWine(customerId);
     }
 
 	@Hidden
@@ -54,7 +55,6 @@ public class CustomerController {
         return ResponseEntity.ok().body(customer);
     }
 
-	@Hidden
 	@GetMapping("/")
     public ResponseEntity<List<Customer>> getAllCustomer() {
 		

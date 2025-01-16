@@ -22,6 +22,7 @@ public class PurchaseService {
 	public List<Purchase.PurchaseResult> findBetterPurchases() {
 		return purchaseRepository.findBetterPurchases();
 	}
+
 	public List<Purchase.PurchaseResult> findMaxPurchasesByYear(Long year) {
 		return purchaseRepository.findMaxPurchasesByYear(year);
 	}

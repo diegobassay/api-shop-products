@@ -66,7 +66,13 @@ public class Purchase {
 
     public static interface PurchaseResult{
 
-        Long getId();
+        String getUserName();
+
+        String getUserCpf();
+
+        Long getQuantity();
+
+        Float getTotal();
 
     }
 

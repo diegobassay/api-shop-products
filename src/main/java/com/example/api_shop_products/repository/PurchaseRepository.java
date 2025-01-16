@@ -8,11 +8,12 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
 
-	@Query(value = "select * "+
-	    "from PURCHASE purchase " +
+	@Query(value = "select custumer.name as user_name, custumer.cpf as user_cpf, purchase.quantity, (sum(purchase.quantity) * sum(product.price)) as total " +
+        "from PURCHASE purchase " +
+        "inner join PRODUCT product on product.code = purchase.code " +
         "inner join CUSTOMER custumer on custumer.id = purchase.customer_id " +
-        //"group by custumer.id, custumer.name " +
-        "order by purchase.quantity desc", nativeQuery = true)
+        "group by  product.wine_type, purchase.quantity, purchase.customer_id, custumer.name, custumer.cpf " +
+        "order by custumer.name, product.price asc", nativeQuery = true)
     public List<Purchase.PurchaseResult> findBetterPurchases();
 
     @Query(value = "select * "+

@@ -1,4 +1,5 @@
 com/example/api_shop_products/exception/ResourceNotFoundException.class
+com/example/api_shop_products/repository/PurchaseRepository.class
 com/example/api_shop_products/exception/IllegalArgumentException.class
 com/example/api_shop_products/controller/CustomerController.class
 com/example/api_shop_products/DemoApplication.class

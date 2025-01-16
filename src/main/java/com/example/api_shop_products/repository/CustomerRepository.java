@@ -10,8 +10,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
 	public Optional<Customer> findByCpf(String cpf);
 
-	@Query(value = "select top 3 custumer.*, sum(purchase.quantity) as total_quantity"+
-	    " from CUSTOMER custumer " +
+	@Query(value = "select top 3 custumer.*, sum(purchase.quantity) as total_quantity "+
+	    "from CUSTOMER custumer " +
         "inner join PURCHASE purchase on custumer.id = purchase.customer_id " +
         "group by custumer.id, custumer.name " +
         "order by total_quantity desc", nativeQuery = true)

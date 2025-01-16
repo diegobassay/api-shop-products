@@ -36,7 +36,7 @@ public class CustomerController {
     @GetMapping("/clientes-fieis")
     public List<Customer> getLoyalCustomers() {
 		
-		List<Customer> listCustomer = customerService.findAll();
+		List<Customer> listCustomer = customerService.findTopThreeCustomer();
         return listCustomer;
     }
 

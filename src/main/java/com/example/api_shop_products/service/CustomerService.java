@@ -31,6 +31,11 @@ public class CustomerService {
         );
 	}
 	
+	public List<Customer> findTopThreeCustomer() {
+		return customerRepository.findTopThreeCustomer();
+	}
+
+
 	public void save(Customer u) throws IllegalArgumentException {
 		customerRepository.save(u);
 	}

@@ -2,7 +2,7 @@ package com.example.api_shop_products.model;
 
 import java.util.List;
 import com.example.api_shop_products.model.Purchase;
-import jakarta.persistence.*; // for Spring Boot 3
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "client")

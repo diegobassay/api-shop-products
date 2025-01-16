@@ -1,5 +1,5 @@
 package com.example.api_shop_products.model;
-import jakarta.persistence.*; // for Spring Boot 3
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "purchase")

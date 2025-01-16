@@ -1,15 +1,13 @@
-package br.com.pereira.LojaDeDoces.services;
+package com.example.api_shop_products.repository;
 
 import java.util.List;
 import java.util.regex.Pattern;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.example.api_shop_products.model.Client;
+import org.springframework.beans.factory.annotation.Autowired;
 import com.example.api_shop_products.repository.ClientRepository;
-//import br.com.pereira.LojaDeDoces.services.exception.IllegalArgumentException;
-//import br.com.pereira.LojaDeDoces.services.exception.ResourceNotFoundException;
+import com.example.api_shop_products.exception.IllegalArgumentException;
+import com.example.api_shop_products.exception.ResourceNotFoundException;
 
 @Service
 public class ClientService {

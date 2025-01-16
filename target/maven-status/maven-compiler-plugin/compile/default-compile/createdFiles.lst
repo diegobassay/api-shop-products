@@ -1,4 +1,8 @@
-com/example/api_shop_products/model/Product.class
-com/example/api_shop_products/model/Client.class
+com/example/api_shop_products/exception/ResourceNotFoundException.class
+com/example/api_shop_products/exception/IllegalArgumentException.class
 com/example/api_shop_products/DemoApplication.class
 com/example/api_shop_products/model/Purchase.class
+com/example/api_shop_products/repository/ClientService.class
+com/example/api_shop_products/model/Product.class
+com/example/api_shop_products/model/Client.class
+com/example/api_shop_products/repository/ClientRepository.class

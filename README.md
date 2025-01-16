@@ -1,5 +1,5 @@
 # api-shop-products
-Projeto para api envolvendo, clientes, produtos e compras
+Projeto para api envolvendo, customeres, produtos e compras
 
 O api de contruída usando SpringBoot 3.4.0 com os seguintes comandos:
 
@@ -36,7 +36,7 @@ Inicialização do projeto deve ser executada com o comando:
 
 Foram adicionadas 3 Entidades para mapear com dados com JPA:
 ```
-Client
+Customer
 Product
 Purchase
 ```

@@ -15,8 +15,8 @@ public class Purchase {
 	@Column(name = "quantity")
 	private Long quantity;
 
-	@Column(name = "client_id")
-	private Integer clientId;
+	@Column(name = "customer_id")
+	private Integer customerId;
 
 	public Purchase() {
 
@@ -47,12 +47,12 @@ public class Purchase {
 		this.quantity = quantity;
 	}
 
-	public Integer getClientId() {
-		return clientId;
+	public Integer getCustomerId() {
+		return customerId;
 	}
 
-	public void setClientId(Integer clientId) {
-		this.clientId = clientId;
+	public void setCustomerId(Integer customerId) {
+		this.customerId = customerId;
 	}
 
 	@Override

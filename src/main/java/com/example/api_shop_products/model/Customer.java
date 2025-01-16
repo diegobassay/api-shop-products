@@ -5,8 +5,8 @@ import com.example.api_shop_products.model.Purchase;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "client")
-public class Client {
+@Table(name = "customer")
+public class Customer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,14 +19,14 @@ public class Client {
 	private String cpf;
 
 	@OneToMany 
-    @JoinColumn(name = "client_id")
+    @JoinColumn(name = "customer_id")
 	private List<Purchase> purchases;
 
-	public Client() {
+	public Customer() {
 
 	}
 
-	public Client(String name, String cpf, List<Purchase> purchases) {
+	public Customer(String name, String cpf, List<Purchase> purchases) {
 		this.name = name;
 		this.cpf = cpf;
 		this.purchases = purchases;

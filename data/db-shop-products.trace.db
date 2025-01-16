@@ -1,0 +1,3 @@
+2025-01-15 23:04:22.977112-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CUSTOMER" not found; SQL statement:
+select c1_0.id,c1_0.cpf,c1_0.name from customer c1_0 [42102-232]

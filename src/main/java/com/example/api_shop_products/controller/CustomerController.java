@@ -68,23 +68,23 @@ public class CustomerController {
 		try {
 			@SuppressWarnings("unused")
 			Customer usuario = customerService.findById(customer.getId());
-			return ResponseEntity.status(HttpStatus.CONFLICT).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customere já cadastrado\"}");
+			return ResponseEntity.status(HttpStatus.CONFLICT).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customer já cadastrado\"}");
 		} catch (ResourceNotFoundException e) {
 			customer.setCpf(customer.getCpf());
 			customerService.save(customer);
-			return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customere inserido com sucesso.\"}");
+			return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customer inserido com sucesso.\"}");
 	    }
     }
 	@Hidden
 	@PutMapping("/")
 	public ResponseEntity<String> putCustomer(@RequestBody Customer custumer) {
 		customerService.save(custumer);
-		return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customere atualizado com sucesso.\"}");
+		return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customer atualizado com sucesso.\"}");
     }
 	@Hidden
 	@DeleteMapping("/")
 	public ResponseEntity<String> deleteCustomer(@RequestBody Customer custumer) {
 		customerService.delete(custumer);
-		return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customere deletado com sucesso\"}");
+		return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customer deletado com sucesso\"}");
     }
 }

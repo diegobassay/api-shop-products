@@ -8,4 +8,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
 
+	@Query(value = "select * "+
+	    "from PURCHASE purchase " +
+        "inner join CUSTOMER custumer on custumer.id = purchase.customer_id " +
+        //"group by custumer.id, custumer.name " +
+        "order by purchase.quantity desc", nativeQuery = true)
+    public List<Purchase.PurchaseResult> findBetterPurchases();
+
+    @Query(value = "select * "+
+	    "from PURCHASE purchase " +
+        "inner join PRODUCT product on product.code = purchase.code " +
+        "inner join CUSTOMER custumer on custumer.id = purchase.customer_id " +
+        "where product.purchasedYear = ?1 " +
+        "order by product.purchasedYear desc", nativeQuery = true)
+    public List<Purchase.PurchaseResult> findBetterPurchasesByYear(Long year);
 }

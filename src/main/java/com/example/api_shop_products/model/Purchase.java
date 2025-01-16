@@ -64,4 +64,10 @@ public class Purchase {
 		return "{ id : " + id + ", code : " + code + ", quantity : " + quantity + "}";
 	}
 
+    public static interface PurchaseResult{
+
+        Long getId();
+
+    }
+
 }

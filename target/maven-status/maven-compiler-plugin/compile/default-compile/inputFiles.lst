@@ -1,5 +1,6 @@
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/DemoApplication.java
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/controller/CustomerController.java
+/home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/controller/PurchaseController.java
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/exception/IllegalArgumentException.java
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/exception/ResourceNotFoundException.java
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/model/Customer.java
@@ -8,3 +9,4 @@
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/repository/CustomerRepository.java
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/repository/PurchaseRepository.java
 /home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/service/CustomerService.java
+/home/diego/Dev/java/api-shop-products/src/main/java/com/example/api_shop_products/service/PurchaseService.java

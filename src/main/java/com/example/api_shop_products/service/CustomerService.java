@@ -31,7 +31,7 @@ public class CustomerService {
         );
 	}
 	
-	public List<Customer> findTopThreeCustomer() {
+	public List<Customer.CustomerResult> findTopThreeCustomer() {
 		return customerRepository.findTopThreeCustomer();
 	}
 

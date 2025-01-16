@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.api_shop_products.model.Customer;
 import com.example.api_shop_products.service.CustomerService;
 import com.example.api_shop_products.exception.ResourceNotFoundException;
+import io.swagger.v3.oas.annotations.Hidden;
 
 @RestController
 @RequestMapping("/customer")
@@ -26,6 +27,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
+	@Hidden
 	@GetMapping("/{id}")
     public ResponseEntity<Customer> getCustomer(@PathVariable(value = "id") Long id) {
 		
@@ -34,26 +36,32 @@ public class CustomerController {
     }
 
     @GetMapping("/clientes-fieis")
-    public List<Customer> getLoyalCustomers() {
-		
-		List<Customer> listCustomer = customerService.findTopThreeCustomer();
+    public List<Customer.CustomerResult> getLoyalCustomers() {
+		List<Customer.CustomerResult> listCustomer = customerService.findTopThreeCustomer();
         return listCustomer;
     }
 
+	@GetMapping("/recomendacao/cliente/tipo")
+    public List<Customer.CustomerResult> getWineRecommendation() {
+
+        return null;
+    }
+
+	@Hidden
 	@GetMapping("/cpf/{cpf}")
     public ResponseEntity<Customer> getCustomerByCpf(@PathVariable(value = "cpf") String cpf) {
-		
 		Customer customer = customerService.findByCpf(cpf);
         return ResponseEntity.ok().body(customer);
     }
-	
+
+	@Hidden
 	@GetMapping("/")
     public ResponseEntity<List<Customer>> getAllCustomer() {
 		
 		List<Customer> listCustomer = customerService.findAll();
         return ResponseEntity.ok().body(listCustomer);
     }
-	
+	@Hidden
 	@PostMapping("/")
     public ResponseEntity<String> postCustomer(@RequestBody Customer customer) {
 		
@@ -67,13 +75,13 @@ public class CustomerController {
 			return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customere inserido com sucesso.\"}");
 	    }
     }
-
+	@Hidden
 	@PutMapping("/")
 	public ResponseEntity<String> putCustomer(@RequestBody Customer custumer) {
 		customerService.save(custumer);
 		return ResponseEntity.status(HttpStatus.OK).body("{\"timestamp\":\"" + Instant.now() + "\",\"message\":\"Customere atualizado com sucesso.\"}");
     }
-	
+	@Hidden
 	@DeleteMapping("/")
 	public ResponseEntity<String> deleteCustomer(@RequestBody Customer custumer) {
 		customerService.delete(custumer);

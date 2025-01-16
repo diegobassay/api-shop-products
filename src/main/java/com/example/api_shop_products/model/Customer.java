@@ -65,4 +65,16 @@ public class Customer {
 		return "{ id : " + id + ", name : " + name + ", cpf : " + cpf + ", purchases : " + purchases.size() + " }";
 	}
 
+    public static interface CustomerResult{
+
+        Integer getQuantityTotalProducts();   
+
+        Long getId();
+
+        String getName();
+
+        String getCpf();
+
+    }
+
 }

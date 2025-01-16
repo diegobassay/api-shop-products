@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
 
-	@Query(value = "select custumer.name as user_name, custumer.cpf as user_cpf, purchase.quantity, (sum(purchase.quantity) * sum(product.price)) as total " +
+	@Query(value = "select purchase.id, product.wine_type, custumer.name as user_name, custumer.cpf as user_cpf, purchase.quantity, (sum(purchase.quantity) * sum(product.price)) as total " +
         "from PURCHASE purchase " +
         "inner join PRODUCT product on product.code = purchase.code " +
         "inner join CUSTOMER custumer on custumer.id = purchase.customer_id " +
@@ -37,5 +37,7 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
         "group by  purchases_cache.id " +
         "order by  max(purchases_cache.total) desc", nativeQuery = true)
     public List<Purchase.PurchaseResult> findMaxPurchasesByYear(Long year);
+
+
 
 }

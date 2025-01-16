@@ -75,8 +75,8 @@ public class Purchase {
 	}
 
     public static interface PurchaseResult{
-
-        long getId();
+ 
+        Long getId();
 
         String getUserName();
 

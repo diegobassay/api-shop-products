@@ -1,5 +1,5 @@
 # api-shop-products
-Projeto para api envolvendo, customeres, produtos e compras
+Projeto para api envolvendo, clientes, produtos e compras
 
 O api de contruída usando SpringBoot 3.4.0 com os seguintes comandos:
 
@@ -41,8 +41,14 @@ pass: root
 jbdc-url: jdbc:h2:file:/home/diego/Dev/java/api-shop-products/data/db-shop-products
 ```
 
+Para carregar as informações no banco de dados é necessário acessar o console acima e executar os script SQL no caminho abaixo:
+```
+./h2-scripts/h2-sql.sql
+```
 
 Para iniciar o console do Swagger acessar essa url:
 ```
 http://localhost:8080/swagger-ui/index.html
+
+![vnc](https://github.com/diegobassay/api-shop-products/blob/master/screenshot.png)
 ```

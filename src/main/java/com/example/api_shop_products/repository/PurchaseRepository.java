@@ -16,11 +16,25 @@ public interface PurchaseRepository extends JpaRepository<Purchase, Long> {
         "order by custumer.name, product.price asc", nativeQuery = true)
     public List<Purchase.PurchaseResult> findBetterPurchases();
 
-    @Query(value = "select * "+
-	    "from PURCHASE purchase " +
+    @Query(value = "select top 1 purchases_cache.id, " +
+        "purchases_cache.user_name, " +
+        "purchases_cache.user_cpf, " +
+        "purchases_cache.quantity, " +
+        "purchases_cache.wine_type, max(purchases_cache.total) as total " +
+        "from ( " +
+        "select purchase.id, custumer.name as user_name, " +
+        "custumer.cpf as user_cpf, " +
+        "product.wine_type, " +
+        "product.purchased_year, " +
+        "purchase.quantity, (sum(purchase.quantity) * sum(product.price)) as total " +
+        "from PURCHASE purchase " +
         "inner join PRODUCT product on product.code = purchase.code " +
-        "inner join CUSTOMER custumer on custumer.id = purchase.customer_id " +
-        "where product.purchasedYear = ?1 " +
-        "order by product.purchasedYear desc", nativeQuery = true)
-    public List<Purchase.PurchaseResult> findBetterPurchasesByYear(Long year);
+        "        inner join CUSTOMER custumer on custumer.id = purchase.customer_id " +
+        "where product.purchased_year = ?1 " +
+        "        group by   purchase.id, product.wine_type, purchase.quantity " +
+        "        order by custumer.name, product.price desc " +
+        ") purchases_cache " +
+        "group by  purchases_cache.id " +
+        "order by  max(purchases_cache.total) desc", nativeQuery = true)
+    public List<Purchase.PurchaseResult> findMaxPurchasesByYear(Long year);
 }

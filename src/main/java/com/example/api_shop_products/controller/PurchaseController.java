@@ -31,7 +31,7 @@ public class PurchaseController {
     @GetMapping("/maior-compra/{ano}")
     public List<Purchase.PurchaseResult> getBetterPurchasesByYear(@PathVariable(value = "ano") Long year) {
 		
-		List<Purchase.PurchaseResult> listCustomer = purchaseService.findBetterPurchasesByYear(year);
+		List<Purchase.PurchaseResult> listCustomer = purchaseService.findMaxPurchasesByYear(year);
         return listCustomer;
     }
 

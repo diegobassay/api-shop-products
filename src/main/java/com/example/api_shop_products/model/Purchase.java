@@ -66,9 +66,13 @@ public class Purchase {
 
     public static interface PurchaseResult{
 
+        long getId();
+
         String getUserName();
 
         String getUserCpf();
+
+        String getWineType();
 
         Long getQuantity();
 

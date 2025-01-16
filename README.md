@@ -50,5 +50,6 @@ Para iniciar o console do Swagger acessar essa url:
 ```
 http://localhost:8080/swagger-ui/index.html
 
-![vnc](https://github.com/diegobassay/api-shop-products/blob/main/screenshot.png)
 ```
+
+![swagger](https://github.com/diegobassay/api-shop-products/blob/main/screenshot.png)

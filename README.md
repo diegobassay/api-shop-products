@@ -33,10 +33,16 @@ Inicialização do projeto deve ser executada com o comando:
 ./mvnw spring-boot:run
 ```
 
-
-Foram adicionadas 3 Entidades para mapear com dados com JPA:
+Para iniciar o console do H2 acessar a seguinte url:
 ```
-Customer
-Product
-Purchase
+http://localhost:8080/h2-console
+user: root
+pass: root
+jbdc-url: jdbc:h2:file:/home/diego/Dev/java/api-shop-products/data/db-shop-products
+```
+
+
+Para iniciar o console do Swagger acessar essa url:
+```
+http://localhost:8080/swagger-ui/index.html
 ```

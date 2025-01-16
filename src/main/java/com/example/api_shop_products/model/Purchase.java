@@ -9,7 +9,7 @@ public class Purchase {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Column(name = "code")
+    @Column(name = "code", insertable=false, updatable=false)
 	private String code;
 
 	@Column(name = "quantity")
@@ -17,6 +17,10 @@ public class Purchase {
 
 	@Column(name = "customer_id")
 	private Integer customerId;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "code", nullable = false)
+    private Product product;
 
 	public Purchase() {
 

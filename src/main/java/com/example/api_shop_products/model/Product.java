@@ -10,7 +10,7 @@ public class Product {
 	private long id;
 
 	@Column(name = "code")
-	private Integer code;
+	private String code;
 
 	@Column(name = "wineType")
 	private String wineType;
@@ -28,7 +28,7 @@ public class Product {
 
 	}
 
-	public Product(Integer code, String wineType, Float price) {
+	public Product(String code, String wineType, Float price) {
 		this.code = code;
 		this.wineType = wineType;
 		this.price = price;
@@ -38,11 +38,11 @@ public class Product {
 		return id;
 	}
 
-	public Integer getCode() {
+	public String getCode() {
 		return code;
 	}
 
-	public void setCode(Integer code) {
+	public void setCode(String code) {
 		this.code = code;
 	}
 
